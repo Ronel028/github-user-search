@@ -5,9 +5,9 @@ const path = require('path');
 const fetch = require('node-fetch');
 const PORT = process.env.PORT || 4000;
 
-app.use('/style', express.static('public/style/style.css'));
-app.use('/script', express.static('public/script/client.js'));
-app.use('/images', express.static('public/images'));
+app.use('/style', express.static(path.join(__dirname, 'public/style/style.css')));
+app.use('/script', express.static(path.join(__dirname, 'public/script/client.js')));
+app.use('/images', express.static(path.join(__dirname, 'public/images')));
 
 app.get('/', (req, res)=>{
     res.sendFile(path.join(__dirname, './view/index.html'));
