@@ -4,7 +4,7 @@ const app = express();
 const path = require('path');
 const fetch = require('node-fetch');
 // const { execArgv } = require('process');
-const PORT = 4000;
+const PORT = process.env.PORT || 4000;
 
 app.use('/style', express.static('public/style/style.css'));
 app.use('/script', express.static('public/script/client.js'));
