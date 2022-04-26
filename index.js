@@ -3,7 +3,6 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const fetch = require('node-fetch');
-// const { execArgv } = require('process');
 const PORT = process.env.PORT || 4000;
 
 app.use('/style', express.static('public/style/style.css'));
@@ -11,7 +10,7 @@ app.use('/script', express.static('public/script/client.js'));
 app.use('/images', express.static('public/images'));
 
 app.get('/', (req, res)=>{
-    res.sendFile(path.join(__dirname, 'view/index.html'));
+    res.sendFile(path.join(__dirname, './view/index.html'));
 })
 
 app.get('/userInfo/:login', async (req, res)=>{
