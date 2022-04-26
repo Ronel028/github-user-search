@@ -1,0 +1,20 @@
+
+//colors
+$very-dark-green: #012622;
+$dark-green: #003B36;
+$dark-orange: #E98A15;
+
+$white: #FFFFFF; //opacity 64% for placeholder
+
+//font
+$space-grotesk : 'Space Grotesk', sans-serif;
+$font-regular: 400;
+$font-medium: 500;
+$font-bold: 700;
+
+//function to convert px to rem
+@function toRem($value) {
+    $remValue: ($value / 16) + rem; 
+    @return $remValue;
+}
+

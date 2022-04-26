@@ -1,0 +1,319 @@
+@import 'variable';
+
+*,*::after, *::before{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body{
+    // background-color: $very-dark-green;
+    color: $white;
+    font-family: $space-grotesk;
+}
+
+.main{
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+    background-color: $very-dark-green;
+    padding: toRem(40) 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .container{
+        max-width: toRem(819);
+        width: 80%;
+        height: auto;
+        margin: 0 auto;
+        overflow-x: hidden;
+
+        display: flex;
+        flex-direction: column;
+        gap: toRem(20);
+
+        .title{
+            width: 100%;
+            h1{
+                font-size: toRem(21);
+                font-weight: $font-bold;
+            }
+        }
+
+        // search contianer
+        .search-container{
+            width: 100%;
+            height: auto;
+            display: flex;
+            align-items: center;
+            gap: toRem(14);
+
+            @media screen and(max-width: toRem(587)){
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            // input
+            .search-bar{
+                width: 100%;
+                background-color: $dark-green;
+                padding: toRem(18) toRem(34);
+
+                display: flex;
+                align-items: center;
+                gap: toRem(28);
+                border-radius: toRem(7);
+                
+                i{
+                    font-size: toRem(17);
+                }
+
+                input[type="text"]{
+                    width: 100%;
+                    font-size: toRem(17);
+                    font-family: $space-grotesk;
+                    font-weight: $font-bold;
+                    color: $white;
+                    background: none;
+                    border: none;
+                    outline: none;
+
+                    &::placeholder{
+                        color: $white;
+                        opacity: 64%;
+                    }
+                }
+            }
+
+            // button
+            button{
+                padding: toRem(17) toRem(34);
+                background-color: $dark-orange;
+                color: $white;
+                font-weight: $font-bold;
+                font-size: toRem(17);
+                font-family: $space-grotesk;
+                border: none;
+                border-radius: toRem(7);
+                cursor: pointer;
+                transition: background 0.2s ease-in-out;
+
+                &:hover{
+                    background-color: $white;
+                    color: $dark-orange;
+                }
+
+                @media screen and(max-width: toRem(476)){
+                    padding: toRem(14) toRem(27);
+                }
+            }
+        }
+
+        // output container
+        .output-container{
+            width: 100%;
+            height: auto;
+            background-color: $dark-green;
+            border-radius: toRem(7);
+            padding: toRem(26);
+
+            //profile
+            .profile{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                .profile-image-info{
+                    width: 100%;
+                    display: grid;
+                    grid-template-columns: toRem(148) 1fr;
+                    align-items: center;
+                    column-gap: toRem(28);
+
+                    @media screen and(max-width: toRem(475)){
+                        column-gap: toRem(40);
+                        grid-template-columns: 6.25rem 1fr;
+                    }
+                    @media screen and(max-width: toRem(377)){
+                        column-gap: toRem(30);
+                    }
+                    
+
+                    .profile-image{
+                        width: toRem(148);
+                        height: toRem(148);
+                        border-radius: 50%;
+                        background-color: $very-dark-green;
+
+                        @media screen and(max-width: toRem(475)){
+                            width: toRem(102);
+                            height: toRem(102);
+                        }
+
+                        img{
+                            width: 100%;               
+                            border-radius: 50%;
+                        }
+                    }
+
+                    .profile-name{
+                        width: 100%;
+                        display: grid;
+                        grid-template-columns: repeat(2, 1fr);
+                        
+                        @media screen and(max-width: toRem(687)){
+                            grid-template-columns: 1fr;
+                            grid-template-rows: repeat(2, 1fr);
+                            align-items: center;
+                            row-gap: toRem(13);
+                        }
+
+                        @media screen and(max-width: toRem(475)){
+                            row-gap: toRem(3);
+                        }
+
+                        .username{
+                            p{
+                                font-size: toRem(23);
+
+                                @media screen and(max-width: toRem(687)){
+                                    margin-bottom: toRem(5);                            
+                                }
+                            
+                            }
+                        }
+
+                        .date-join{
+                           
+                            justify-self: end;
+
+                            @media screen and(max-width: toRem(687)){
+                                justify-self: start;
+                            }
+
+                            p{
+                                font-size: toRem(16);
+                                font-weight: $font-medium;
+
+                                @media screen and(max-width: toRem(475)){
+                                    font-size: toRem(13);
+                                }
+                            }
+                        }
+                    }
+                }
+
+            }
+            
+            .profile-info{
+                margin-left: toRem(174);
+                max-width: 77%;
+                
+                @media screen and(max-width: toRem(693)){
+                    margin-left: 0;
+                    max-width: 100%;
+                    margin-top: toRem(27);
+                }
+
+                .bio{
+                    margin-bottom: toRem(20);
+                   p{
+                       font-size: tORem(16);
+                       font-weight: $font-medium;
+                   }
+                }
+
+                .number-follow{
+                    background-color: $very-dark-green;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding: toRem(17) toRem(30);
+                    border-radius: toRem(7);
+                    margin-bottom: toRem(17);
+
+                    @media screen and(max-width: toRem(390)){
+                        padding: toRem(17) toRem(20);
+                    }
+
+                    .repo, .followers, .following{
+                        p{
+                            &:first-child{
+                                font-size: toRem(13);
+                                font-weight: $font-regular;
+                                color: $white;
+                                opacity: 64%;
+                                margin-bottom: toRem(8);    
+                            }
+                            &:last-child{
+                                font-size: toRem(15);
+                                font-weight: $font-bold;
+                            }
+                        }
+                    }
+                }
+
+                // contact
+                .contact-info{
+                    width: 100%;
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    grid-template-rows: repeat(2, 1fr);
+                    row-gap: toRem(18);
+                    grid-template-areas: 
+                                'location twitter'
+                                'link organization';
+
+                    @media screen and(max-width: toRem(751)){
+                        grid-template-columns: 1fr;
+                        grid-template-rows: repeat(4, 1fr);
+
+                        grid-template-areas: 
+                                'location'
+                                'link'
+                                'twitter'
+                                'organization';
+
+                    }
+
+                    .location, .copy-link, .twitter, .org{
+                        display: flex;
+                        align-items: center;
+                        gap: toRem(14);
+                    }            
+                    .location{
+                        grid-area: location;
+                        
+                        @media screen and(max-width: toRem(751)){
+                            grid-area: location;
+                        }
+                    }
+                    .copy-link{
+                       grid-area: link;
+                       @media screen and(max-width: toRem(751)){
+                           grid-area: link;
+                       }
+                    }
+                    .twitter{
+                        grid-area: twitter;
+                        margin-left: toRem(50);
+
+                        @media screen and(max-width: toRem(751)){
+                            grid-area: twitter;
+                            margin-left: 0;
+                        }
+                    }
+                    .org{
+                        grid-area: organization;
+                        margin-left: toRem(50);
+
+                        @media screen and(max-width: toRem(751)){
+                            grid-area: organization;
+                            margin-left: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
